@@ -63,7 +63,8 @@ If you are interested in this project or have any suggestions, feel free to open
 
 ---
 
-*Transform Your WeChat Favorites into ima Knowledge Base*
+*Transform Your WeChat Favorites into ima Knowledge Base automatically!*
+
 
 
 
