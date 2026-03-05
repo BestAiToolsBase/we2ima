@@ -1,4 +1,4 @@
-# We2Ima (WeChat Favorites to ima Copilot)
+# We2Ima (WeChat Favorites to ima Importer)
 
 [简体中文](./README_zh.md) | English
 
@@ -64,4 +64,5 @@ If you are interested in this project or have any suggestions, feel free to open
 ---
 
 *Transform Your WeChat Favorites into ima Knowledge Base*
+
 
