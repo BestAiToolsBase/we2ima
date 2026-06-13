@@ -2,9 +2,11 @@
 
 简体中文 | [English](./README_en.md)
 
+> 📦 **最新版本 v1.0.1**(2026-06-10) · v1.0 系列首个优化迭代 · [📋 查看完整更新](./CHANGELOG.md) · [⬇️ 下载](https://www.we2ima.com/download/)
+
 **本工具是一款桌面自动化工具，旨在帮助用户将微信收藏夹中的文章导入到 ima 知识库中，使用时需遵循本软件的“使用协议”，请勿用于任何'非个人用途'及任何'非法场景'！**
 
-**We2Ima** 是一个自动化工具，旨在将您的微信收藏夹内容自动导入到 AI 知识库（[腾讯 ima.copilot](https://ima.qq.com/)）。它将您微信收藏中的“稍后阅读”转化为结构化的、由 AI 驱动的个人知识系统。
+**We2Ima** 是一个自动化工具，旨在将您的微信收藏夹内容自动导入到 AI 知识库（[腾讯 ima.copilot](https://ima.qq.com/)）。它将您微信中的“稍后阅读”收藏转化为结构化的、由 AI 驱动的个人知识系统。
 
 > **注意：** 本仓库目前处于“预热”阶段。我们正在分享项目的愿景和功能特性，核心代码将分阶段发布。
 
@@ -63,8 +65,46 @@
 
 ---
 
-*把微信收藏变成你的知识库！*
+## 🔧 开发与发版工具
 
+### 发布前密钥校验（必跑）
+
+```bash
+python scripts/pre_release_check.py
+```
+
+该脚本会检查以下 4 项，**全部 PASS** 后方可发布：
+
+1. **占位符扫描** — `payment_server/config/payment.yaml`、`website/wrangler.jsonc`、`.env`、`.dev.vars` 中是否还有 `yourdomain.com`、`change-me`、`YOUR_D1_DATABASE_ID` 等占位符
+2. **版本号三处一致性** — `src/gui/about_tab.py` 的 `APP_VERSION`、`version_info.txt` 的 `ProductVersion`、`payment.yaml` 的 `app_version.latest_version` 三处必须一致
+3. **HMAC 双端一致性** — 客户端 `src/payment/payment_config.py` 的字节数组必须与 `payment_server/.env` 的 `HMAC_SECRET` 完全一致
+4. **JWT RSA 公私钥配对** — 客户端 `src/license/jwt_parser.py` 的 `_RSA_PUBLIC_KEYS["key-v1"]` 必须与 `payment_server/keys/private_key.pem` 配对
+
+详细清单与说明见 [`docs/RELEASE_SECRETS.md`](./docs/RELEASE_SECRETS.md)。
+
+### HMAC 密钥轮换
+
+如需轮换客户端/服务端共享的 HMAC 密钥，按 [`docs/HMAC_ROTATION.md`](./docs/HMAC_ROTATION.md) 中的 SOP 操作。
+
+### 不可变加密参数校验
+
+```bash
+python scripts/verify_crypto_params.py
+```
+
+检查 `license.dat`、数据库、设置文件的加密参数未被意外修改。**改了就过不了**，必须配合全网数据迁移。
+
+### 一键生成部署密钥
+
+```bash
+python scripts/generate_deploy_secrets.py
+```
+
+生成 `HMAC_SECRET` / `SECRET_KEY` / `DBVIEW_PASSWORD`，并输出客户端 `_p = [...]` 字节数组。
+
+---
+
+*把微信收藏变成你的知识库！*
 
 
 

@@ -2,6 +2,8 @@
 
 [简体中文](./README.md) | English
 
+> 📦 **Latest: v1.0.1** (2026-06-10) · First post-release optimization update · [📋 Full Changelog](./CHANGELOG.md) · [⬇️ Download](https://www.we2ima.com/en/download/)
+
 **This tool is a desktop automation tool designed to help users import articles from their WeChat Favorites into the ima knowledge base. When using it, you must comply with the software's "User Agreement". Please do NOT use it for any 'non-personal purposes' or any 'illegal scenarios'!**
 
 **We2Ima** is an automation tool designed to automatically import your WeChat Favorites content into an AI knowledge base ([Tencent ima.copilot](https://ima.qq.com/)). It breaks the information silo of WeChat, transforming your "read later" collection into a structured, AI-powered personal knowledge system.
@@ -63,8 +65,7 @@ If you are interested in this project or have any suggestions, feel free to open
 
 ---
 
-*Transform Your WeChat Favorites to ima Knowledge Base Automatically!*
-
+*Transform Your WeChat Favorites into ima Knowledge Base*
 
 
 
