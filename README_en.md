@@ -2,7 +2,7 @@
 
 [简体中文](./README.md) | English
 
-> 📦 **Latest: v1.0.1** (2026-06-12) · First post-release optimization update · [📋 Full Changelog](./CHANGELOG.md) · [⬇️ Download](https://www.we2ima.com/en/download/)
+> 📦 **Latest: v1.0.2** (2026-07-02) · Import efficiency, import start mode flexibility, WeChat article import stability, favorites scanning reliability, task report dialog visibility, and onboarding improvements · [📋 Full Changelog](./CHANGELOG.md) · [⬇️ Download](https://www.we2ima.com/en/download/)
 
 **This tool is a desktop automation tool designed to help users import articles from their WeChat Favorites into the ima knowledge base. When using it, you must comply with the software's "User Agreement". Please do NOT use it for any 'non-personal purposes' or any 'illegal scenarios'!**
 
