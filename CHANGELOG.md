@@ -8,6 +8,53 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), versio
 
 ---
 
+## [1.0.3] - 2026-07-12
+
+本次更新新增微信公众号文章下载与公众号已读标记能力，并加强旧版本升级兼容、阅读标记稳定性、版本提示和后台使用统计。
+This update adds WeChat Official Account article downloading and read-status marking, while improving upgrade compatibility, read-marker stability, release notices, and backend usage analytics.
+
+### ✨ 新增 / Added
+
+- 新增“公众号下载”功能，可批量下载微信公众号文章，并保存为 Markdown 与 MHTML 文件，方便本地归档、整理和后续阅读。
+  Added WeChat Official Account Article Download, allowing users to batch download articles and save them as Markdown and MHTML files for local archiving and reading.
+- 新增“公众号已读标记”功能，可识别公众号文章阅读状态，并在微信收藏夹文章列表中显示已读提示。
+  Added WeChat Official Account Read Marker, which detects article reading status and shows read indicators in WeChat Favorites article lists.
+- “公众号已读标记”功能配套“统计与管理”页面，可查看已读文章、阅读时间、公众号统计和阅读概览。
+  Added read-marker statistics and management pages for read articles, reading time, publisher statistics, and reading overview.
+- 新增 v1.0.3 新版本功能提示弹窗，帮助新用户和升级用户了解当前版本新增能力。
+  Added a v1.0.3 release notice dialog so new and upgraded users can quickly understand the new capabilities.
+
+### 💡 优化 / Improved
+
+- 优化旧版本升级兼容。v1.0.0、v1.0.1、v1.0.2 用户升级到 v1.0.3 时，会自动补齐新配置项，并在需要迁移旧数据库结构前创建备份。
+  Improved upgrade compatibility for users upgrading from v1.0.0, v1.0.1, or v1.0.2. New settings are backfilled automatically, and database backups are created before required legacy-schema migrations.
+- 优化构建与打包配置，确保新增模块、扩展资源、依赖和版本信息能进入发布包。
+  Improved build and packaging configuration so new modules, extension assets, dependencies, and version metadata are included in release builds.
+
+### 🐛 修复 / Fixed
+
+- 修复导入任务自动打开公众号文章时，阅读标记可能误判为用户已读的问题。自动导入期间不会写入已读记录；用户暂停导入并继续阅读时仍可正常记录。
+  Fixed read-marker records being incorrectly created when the import task automatically opens WeChat articles. Auto-opened import pages are no longer counted as user reading; if the user pauses the import task and keeps reading, the article can still be recorded normally.
+- 修复旧版主数据库缺少 `day_order` 等字段时，升级初始化可能先创建索引而失败的问题。
+  Fixed legacy main-database upgrades that could fail when indexes were created before missing fields such as `day_order` were added.
+- 修复数据库迁移备份文件可能反复创建的问题，减少重复备份噪声。
+  Fixed repeated creation of database migration backup files.
+- 修复部分新增功能在打包后可能因模块或资源未注册而无法加载的风险。
+  Fixed packaging risks where newly added modules or resources could be missing from release builds.
+
+### 📝 提示 / Notes
+
+- “公众号下载”适合用于本地备份微信公众号文章。下载结果会保存为 Markdown 与 MHTML，实际效果可能受原文章页面结构、图片加载和网络环境影响。
+  WeChat Article Download is intended for local backup of WeChat Official Account articles. Markdown and MHTML output may vary depending on article structure, image loading, and network conditions.
+- “公众号已读标记”需要配合本地服务与 Chrome 扩展使用，只在本机记录和展示阅读状态。
+  WeChat Read Marker works with a local service and Chrome extension. Reading status is recorded and displayed locally on the user's machine.
+- 如果正在运行自动导入任务，程序会尽量避免把自动打开的文章误记为已读；暂停导入任务后继续阅读当前文章，则可按人工阅读记录。
+  During automated import tasks, We2Ima avoids marking auto-opened articles as read. If the task is paused and the user continues reading the current article, it can be treated as manual reading.
+- 老用户首次升级到 v1.0.3 时，程序可能会创建配置或数据库迁移备份，这是为了保护旧版本数据。
+  When upgrading to v1.0.3 for the first time, the app may create settings or database migration backups to protect older user data.
+
+---
+
 ## [1.0.2] - 2026-07-02
 
 本次更新聚焦本地客户端导入效率、部分结构文章导入稳定性、导入模式灵活性、扫描可靠性、调试流程、全量重试可靠性和新用户上手体验提示。

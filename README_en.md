@@ -2,7 +2,7 @@
 
 [简体中文](./README.md) | English
 
-> 📦 **Latest: v1.0.2** (2026-07-02) · Import efficiency, import start mode flexibility, WeChat article import stability, favorites scanning reliability, task report dialog visibility, and onboarding improvements · [📋 Full Changelog](./CHANGELOG.md) · [⬇️ Download](https://www.we2ima.com/en/download/)
+> 📦 **Latest: v1.0.3** (2026-07-12) · Adds WeChat Official Account article download and read markers, with improved upgrade compatibility, read-marker stability, release notices, and packaging completeness · [📋 Full Changelog](./CHANGELOG.md) · [⬇️ Download](https://www.we2ima.com/en/download/)
 
 **This tool is a desktop automation tool designed to help users import articles from their WeChat Favorites into the ima knowledge base. When using it, you must comply with the software's "User Agreement". Please do NOT use it for any 'non-personal purposes' or any 'illegal scenarios'!**
 
@@ -32,6 +32,8 @@ WeChat is one of the largest content ecosystems, but its content is often trappe
 
 - **🤖 Intelligent UI Automation**: Built on GUI automation. It doesn't just do simple "clicks"; it simulates human mouse operation behavior to ensure compatibility and safety.
 - **🧠 Deep ima Integration**: Specifically optimized for Tencent's ima.copilot, including automated menu interaction and state monitoring.
+- **📥 WeChat Official Account Article Download**: Batch download WeChat Official Account articles and save them as Markdown and MHTML files for local archiving and later reading.
+- **✅ WeChat Official Account Read Marker**: Detect article reading status, show local read indicators in WeChat Favorites article lists, and provide statistics management.
 - **🔄 Smart Syncing Modes**:
   - **Incremental Scan**: Only sync articles added since your last run.
   - **Date Range Mode**: Focus on specific time periods.
