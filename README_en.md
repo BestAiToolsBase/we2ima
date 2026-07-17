@@ -1,4 +1,4 @@
-# We2Ima (WeChat Favorites to ima Importer)
+# We2ima (WeChat Favorites to ima Importer)
 
 [简体中文](./README.md) | English
 
