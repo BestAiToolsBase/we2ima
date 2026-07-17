@@ -1,4 +1,4 @@
-# We2Ima (微信收藏夹 导入 ima知识库 助手)
+# We2ima (微信收藏夹 导入 ima知识库 助手)
 
 简体中文 | [English](./README_en.md)
 
